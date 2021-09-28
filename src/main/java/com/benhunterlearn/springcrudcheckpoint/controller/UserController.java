@@ -1,6 +1,6 @@
 package com.benhunterlearn.springcrudcheckpoint.controller;
 
-import com.benhunterlearn.springcrudcheckpoint.model.Authenticated;
+import com.benhunterlearn.springcrudcheckpoint.model.AuthenticatedUser;
 import com.benhunterlearn.springcrudcheckpoint.model.Count;
 import com.benhunterlearn.springcrudcheckpoint.model.User;
 import com.benhunterlearn.springcrudcheckpoint.model.UserDto;
@@ -53,10 +53,10 @@ public class UserController {
     }
 
     @PostMapping("/authenticate")
-    public Authenticated postAuthenticatesUserByEmailAndPassword(@RequestBody UserDto userDto) {
+    public AuthenticatedUser postAuthenticatesUserByEmailAndPassword(@RequestBody UserDto userDto) {
         // lookup user by email
         User userFromRepository = this.repository.findUserByEmail(userDto.getEmail());
-        Authenticated authenticated = new Authenticated();
+        AuthenticatedUser authenticated = new AuthenticatedUser();
         // if passwords match
         if (userDto.getPassword().equals(userFromRepository.getPassword())) {
             authenticated.setAuthenticated(true);

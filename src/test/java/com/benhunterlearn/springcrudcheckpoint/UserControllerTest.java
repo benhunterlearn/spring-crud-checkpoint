@@ -3,7 +3,6 @@ package com.benhunterlearn.springcrudcheckpoint;
 import com.benhunterlearn.springcrudcheckpoint.model.User;
 import com.benhunterlearn.springcrudcheckpoint.model.UserDto;
 import com.benhunterlearn.springcrudcheckpoint.repository.UserRepository;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -16,8 +15,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.transaction.annotation.Transactional;
-
-import javax.swing.*;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.jupiter.api.Assertions.*;
